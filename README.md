@@ -40,7 +40,7 @@ A web-based tool for hiding and extracting text messages within images using the
 2. Push these files to your repository
 3. Go to repository Settings > Pages
 4. Select the main branch as the source
-5. Your web tool will be available at `https://[your-username].github.io/[repository-name]`
+5. Your web tool will be available at `https://HumairaCoderfusion.github.io/HiddenMsgVersion`
 
 ## Browser Compatibility
 
@@ -68,5 +68,5 @@ This project is open-source under the MIT License. Feel free to modify and distr
 ---
 
 ### 👤 Author: Nibir  
-GitHub: [NibirMahmud](https://www.github.com/mahmudnibir)  
+GitHub: [Humaira](https://www.github.com/HumairaCoderfusion)  
 Date: 2025-03-24
