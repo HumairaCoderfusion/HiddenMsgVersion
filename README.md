@@ -1,63 +1,63 @@
-# Image Steganography (LSB Technique with AES Encryption)
+# Image Steganography Web Tool
 
-## 📄 Description
+A web-based tool for hiding and extracting text messages within images using the Least Significant Bit (LSB) steganography technique.
 
-This project allows you to hide text within an image using the Least Significant Bit (LSB) method. It also integrates AES encryption to secure the text before embedding it inside the image. Here's the process:
+## Features
 
-1. **Encryption**: The text is encrypted using AES with a password.
-2. **Conversion**: The encrypted text is then converted into binary form.
-3. **Embedding**: The binary data is embedded in the least significant bits of the RGB channels of the image.
-4. **Extraction**: The encrypted text is extracted from the image using the LSB method and decrypted with the password.
+- Hide text messages within images
+- Extract hidden text from images
+- Password protection for hidden messages
+- Modern and responsive web interface
+- Works entirely in the browser (no server required)
 
-## 🛠️ Dependencies
+## How to Use
 
-- `cryptography`: AES encryption library. Install it using:
-  ```bash
-  pip install cryptography
-  ```
-- `Pillow`: Python Imaging Library (PIL) for working with images. Install it using:
-  ```bash
-  pip install pillow
-  ```
+1. **Hide Text in Image**
+   - Click on the "Hide Text" tab
+   - Select an image file
+   - Enter the text you want to hide
+   - Set a password for encryption
+   - Click "Hide Text"
+   - Download the resulting image
 
-## 🔑 Key Functions
+2. **Extract Text from Image**
+   - Click on the "Extract Text" tab
+   - Select an image containing hidden text
+   - Enter the password used to hide the text
+   - Click "Extract Text"
+   - View the extracted message
 
-1. **generate_key(password)**: Generates a key from the provided password.
-2. **encrypt_text(text, password)**: Encrypts the given text using AES encryption.
-3. **decrypt_text(encrypted_text, password)**: Decrypts the encrypted text using the AES key generated from the password.
-4. **text_to_bin(text)**: Converts the input text into its binary representation.
-5. **bin_to_text(binary_data)**: Converts a binary string back to readable text.
-6. **hide_text_in_image(image_path, text, output_image_path, password)**: Hides the encrypted text within the image.
-7. **extract_text_from_image(image_path, password)**: Extracts and decrypts the hidden text from the image.
+## Technical Details
 
-## 🔒 Encryption and Steganography Workflow
+- Uses LSB (Least Significant Bit) steganography
+- Implements XOR-based encryption for message security
+- Works with PNG and JPEG images
+- All processing is done client-side in the browser
 
-1. **Encrypt the text**: The input text is encrypted using the AES algorithm with a password.
-2. **Convert to binary**: The encrypted text is then converted into a binary form for LSB embedding.
-3. **Embed the binary data in an image**: The binary data is embedded into the image's least significant bits of the RGB color channels.
-4. **Extract the binary data**: The encrypted binary data is extracted using the same password.
-5. **Decrypt the binary data**: Finally, the encrypted text is decrypted back to its original form.
+## Hosting on GitHub Pages
 
-## 🖼️ Example Usage
+1. Create a new repository on GitHub
+2. Push these files to your repository
+3. Go to repository Settings > Pages
+4. Select the main branch as the source
+5. Your web tool will be available at `https://[your-username].github.io/[repository-name]`
 
-```python
-image_path = "photo.jpg"
-text = "just some initial text to hide in the image."
-output_image_path = "hidden_image.png"
-password = "konopasswordlagena"
+## Browser Compatibility
 
-# Hide the text
-hide_text_in_image(image_path, text, output_image_path, password)
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
 
-# Extract the text
-extracted_text = extract_text_from_image(output_image_path, password)
-print("Extracted Text:", extracted_text)
-```
+## Security Notes
 
-## 📝 Output
+- The encryption used is a simple XOR-based method and should not be used for highly sensitive data
+- Always use strong passwords
+- The tool works entirely in your browser - no data is sent to any server
 
-- The `hide_text_in_image()` function embeds the encrypted text into the image and saves it as `output_image_path`.
-- The `extract_text_from_image()` function retrieves and decrypts the hidden text from the image, provided the correct password.
+## License
+
+This project is open source and available under the MIT License.
 
 ---
 

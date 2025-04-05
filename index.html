@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Steganography Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Steganography Tool</h1>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="hide">Hide Text</button>
+            <button class="tab-btn" data-tab="extract">Extract Text</button>
+        </div>
+
+        <div class="tab-content" id="hide">
+            <div class="upload-section">
+                <h2>Hide Text in Image</h2>
+                <div class="input-group">
+                    <label for="image-input">Select Image:</label>
+                    <input type="file" id="image-input" accept="image/*">
+                </div>
+                <div class="input-group">
+                    <label for="text-input">Enter Text to Hide:</label>
+                    <textarea id="text-input" rows="4"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="password-input">Password:</label>
+                    <input type="password" id="password-input">
+                </div>
+                <button id="hide-btn">Hide Text</button>
+                <div id="result-container" class="hidden">
+                    <h3>Result:</h3>
+                    <div id="result-image"></div>
+                    <a id="download-btn" class="hidden">Download Image</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content hidden" id="extract">
+            <div class="upload-section">
+                <h2>Extract Text from Image</h2>
+                <div class="input-group">
+                    <label for="extract-image-input">Select Image:</label>
+                    <input type="file" id="extract-image-input" accept="image/*">
+                </div>
+                <div class="input-group">
+                    <label for="extract-password-input">Password:</label>
+                    <input type="password" id="extract-password-input">
+                </div>
+                <button id="extract-btn">Extract Text</button>
+                <div id="extract-result" class="hidden">
+                    <h3>Extracted Text:</h3>
+                    <div id="extracted-text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
