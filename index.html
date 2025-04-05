@@ -8,53 +8,75 @@
 </head>
 <body>
     <div class="container">
-        <h1>Image Steganography Tool</h1>
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="hide">Hide Text</button>
-            <button class="tab-btn" data-tab="extract">Extract Text</button>
+        <div class="terminal-header">
+            <div class="terminal-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+            </div>
+            <div class="terminal-title">HIDDEN MESSAGE v1.0</div>
         </div>
+        
+        <div class="terminal-content">
+            <div class="command-line">
+                <span class="prompt">user@steganography:~$</span>
+                <span class="command">initiate system</span>
+                <span class="cursor"></span>
+            </div>
+            
+            <h1>Image Steganography Tool</h1>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="hide">Hide Text</button>
+                <button class="tab-btn" data-tab="extract">Extract Text</button>
+            </div>
 
-        <div class="tab-content" id="hide">
-            <div class="upload-section">
-                <h2>Hide Text in Image</h2>
-                <div class="input-group">
-                    <label for="image-input">Select Image:</label>
-                    <input type="file" id="image-input" accept="image/*">
+            <div class="tab-content" id="hide">
+                <div class="upload-section">
+                    <h2>Hide Text in Image</h2>
+                    <div class="input-group">
+                        <label for="image-input">> Select Image:</label>
+                        <input type="file" id="image-input" accept="image/*">
+                    </div>
+                    <div class="input-group">
+                        <label for="text-input">> Enter Text to Hide:</label>
+                        <textarea id="text-input" rows="4" placeholder="Enter your secret message here..."></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="password-input">> Password:</label>
+                        <input type="password" id="password-input" placeholder="Enter encryption key">
+                    </div>
+                    <button id="hide-btn">Execute Hide Operation</button>
+                    <div id="result-container" class="hidden">
+                        <h3>Operation Result:</h3>
+                        <div id="result-image"></div>
+                        <a id="download-btn" class="hidden">Download Encrypted Image</a>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="text-input">Enter Text to Hide:</label>
-                    <textarea id="text-input" rows="4"></textarea>
-                </div>
-                <div class="input-group">
-                    <label for="password-input">Password:</label>
-                    <input type="password" id="password-input">
-                </div>
-                <button id="hide-btn">Hide Text</button>
-                <div id="result-container" class="hidden">
-                    <h3>Result:</h3>
-                    <div id="result-image"></div>
-                    <a id="download-btn" class="hidden">Download Image</a>
+            </div>
+
+            <div class="tab-content hidden" id="extract">
+                <div class="upload-section">
+                    <h2>Extract Text from Image</h2>
+                    <div class="input-group">
+                        <label for="extract-image-input">> Select Image:</label>
+                        <input type="file" id="extract-image-input" accept="image/*">
+                    </div>
+                    <div class="input-group">
+                        <label for="extract-password-input">> Password:</label>
+                        <input type="password" id="extract-password-input" placeholder="Enter decryption key">
+                    </div>
+                    <button id="extract-btn">Execute Extract Operation</button>
+                    <div id="extract-result" class="hidden">
+                        <h3>Extracted Message:</h3>
+                        <div id="extracted-text" class="terminal-output"></div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="tab-content hidden" id="extract">
-            <div class="upload-section">
-                <h2>Extract Text from Image</h2>
-                <div class="input-group">
-                    <label for="extract-image-input">Select Image:</label>
-                    <input type="file" id="extract-image-input" accept="image/*">
-                </div>
-                <div class="input-group">
-                    <label for="extract-password-input">Password:</label>
-                    <input type="password" id="extract-password-input">
-                </div>
-                <button id="extract-btn">Extract Text</button>
-                <div id="extract-result" class="hidden">
-                    <h3>Extracted Text:</h3>
-                    <div id="extracted-text"></div>
-                </div>
-            </div>
+        
+        <div class="terminal-footer">
+            <span class="status">Status: Ready</span>
+            <span class="system-info">System: Online | Memory: Stable | Encryption: Active</span>
         </div>
     </div>
     <script src="script.js"></script>
